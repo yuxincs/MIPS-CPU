@@ -1332,7 +1332,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="0" loc="(170,390)" name="Constant">
       <a name="width" val="32"/>
-      <a name="value" val="0x31"/>
+      <a name="value" val="0x1f"/>
     </comp>
     <comp lib="0" loc="(560,310)" name="Tunnel">
       <a name="width" val="32"/>
@@ -1510,7 +1510,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     </comp>
     <comp lib="0" loc="(170,390)" name="Constant">
       <a name="width" val="32"/>
-      <a name="value" val="0x31"/>
+      <a name="value" val="0x1f"/>
     </comp>
     <comp lib="0" loc="(490,320)" name="Constant">
       <a name="width" val="32"/>
