@@ -120,10 +120,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <circ-port height="8" pin="130,250" width="8" x="116" y="106"/>
       <circ-port height="10" pin="300,80" width="10" x="135" y="65"/>
       <circ-port height="10" pin="300,180" width="10" x="135" y="85"/>
-      <circ-port height="10" pin="470,150" width="10" x="65" y="45"/>
-      <circ-port height="10" pin="560,150" width="10" x="85" y="45"/>
+      <circ-port height="10" pin="560,150" width="10" x="65" y="45"/>
       <circ-port height="10" pin="650,150" width="10" x="105" y="45"/>
       <circ-port height="10" pin="740,150" width="10" x="125" y="45"/>
+      <circ-port height="10" pin="470,150" width="10" x="85" y="45"/>
       <circ-anchor facing="east" height="6" width="6" x="137" y="77"/>
     </appear>
     <wire from="(1320,280)" to="(1320,810)"/>
@@ -613,116 +613,35 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(40,830)" to="(50,830)"/>
     <wire from="(990,660)" to="(1000,660)"/>
     <wire from="(730,880)" to="(740,880)"/>
+    <comp lib="4" loc="(730,1110)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$28 $gp"/>
+    </comp>
+    <comp lib="0" loc="(160,220)" name="Tunnel">
+      <a name="label" val="WE"/>
+    </comp>
     <comp lib="4" loc="(930,650)" name="Register">
       <a name="width" val="32"/>
       <a name="label" val="$14 $t6"/>
     </comp>
-    <comp lib="0" loc="(740,150)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$ra Value"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(160,250)" name="Tunnel">
-      <a name="label" val="clk"/>
-    </comp>
-    <comp lib="4" loc="(930,1110)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$30 $fp"/>
-    </comp>
-    <comp lib="4" loc="(530,650)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$10 $t2"/>
-    </comp>
-    <comp lib="0" loc="(1290,1180)" name="Tunnel">
+    <comp lib="0" loc="(470,190)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="width" val="32"/>
-      <a name="label" val="reg2"/>
+      <a name="label" val="$a0"/>
     </comp>
-    <comp lib="0" loc="(300,180)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
+    <comp lib="4" loc="(530,880)" name="Register">
       <a name="width" val="32"/>
-      <a name="label" val="Reg2"/>
-      <a name="labelloc" val="east"/>
+      <a name="label" val="$18 $s2"/>
     </comp>
-    <comp lib="4" loc="(830,880)" name="Register">
+    <comp lib="4" loc="(330,420)" name="Register">
       <a name="width" val="32"/>
-      <a name="label" val="$21 $s5"/>
-    </comp>
-    <comp lib="0" loc="(1060,1280)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="32"/>
-      <a name="label" val="write_data"/>
-    </comp>
-    <comp lib="4" loc="(730,650)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$12 $t4"/>
-    </comp>
-    <comp lib="0" loc="(150,100)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="write_reg#"/>
-    </comp>
-    <comp lib="6" loc="(606,39)" name="Text">
-      <a name="text" val="Debug引脚，便于观测寄存器值"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(1090,1210)" name="Tunnel">
-      <a name="label" val="clk"/>
-    </comp>
-    <comp lib="0" loc="(650,190)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s2"/>
-    </comp>
-    <comp lib="4" loc="(630,420)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$3 $v1"/>
-    </comp>
-    <comp lib="4" loc="(1030,650)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$15 $t7"/>
-    </comp>
-    <comp lib="0" loc="(200,480)" name="Constant"/>
-    <comp lib="4" loc="(730,880)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$20 $s4"/>
-    </comp>
-    <comp lib="4" loc="(630,880)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$19 $s3"/>
-    </comp>
-    <comp lib="0" loc="(650,150)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s2 Value"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(1480,1140)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="reg2#"/>
-    </comp>
-    <comp lib="0" loc="(130,160)" name="Pin">
-      <a name="width" val="32"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Din"/>
-    </comp>
-    <comp lib="2" loc="(50,830)" name="Demultiplexer">
-      <a name="selloc" val="tr"/>
-      <a name="select" val="2"/>
-      <a name="disabled" val="0"/>
-    </comp>
-    <comp lib="4" loc="(430,880)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$17 $s1"/>
+      <a name="label" val="$0 $Zero"/>
     </comp>
     <comp lib="0" loc="(470,150)" name="Pin">
       <a name="facing" val="south"/>
       <a name="output" val="true"/>
       <a name="width" val="32"/>
-      <a name="label" val="$s0 Value"/>
+      <a name="label" val="$a0 Value"/>
       <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(80,760)" name="Splitter">
@@ -734,100 +653,44 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit3" val="1"/>
       <a name="bit4" val="1"/>
     </comp>
-    <comp lib="4" loc="(330,1110)" name="Register">
+    <comp lib="4" loc="(1030,1110)" name="Register">
       <a name="width" val="32"/>
-      <a name="label" val="$24 $t8"/>
-    </comp>
-    <comp lib="4" loc="(330,880)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$16 $s0"/>
-    </comp>
-    <comp lib="0" loc="(560,150)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s1 Value"/>
-      <a name="labelloc" val="north"/>
-    </comp>
-    <comp lib="0" loc="(40,830)" name="Constant"/>
-    <comp lib="0" loc="(320,830)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s0"/>
-    </comp>
-    <comp lib="4" loc="(1030,420)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$7 $a3"/>
-    </comp>
-    <comp lib="0" loc="(470,190)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s0"/>
-    </comp>
-    <comp lib="0" loc="(150,70)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="reg2#"/>
+      <a name="label" val="$31 $ra"/>
     </comp>
     <comp lib="4" loc="(530,1110)" name="Register">
       <a name="width" val="32"/>
       <a name="label" val="$26 $k0"/>
     </comp>
-    <comp lib="0" loc="(740,190)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$ra"/>
-    </comp>
-    <comp lib="0" loc="(60,750)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="label" val="WE"/>
-    </comp>
-    <comp lib="4" loc="(830,1110)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$29 $sp"/>
-    </comp>
-    <comp lib="2" loc="(210,1170)" name="Demultiplexer">
-      <a name="selloc" val="tr"/>
-      <a name="select" val="3"/>
-      <a name="disabled" val="0"/>
-    </comp>
-    <comp lib="2" loc="(210,710)" name="Demultiplexer">
-      <a name="select" val="3"/>
-      <a name="disabled" val="0"/>
-    </comp>
-    <comp lib="0" loc="(130,40)" name="Pin">
+    <comp lib="0" loc="(150,70)" name="Tunnel">
       <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Reg1#"/>
+      <a name="label" val="reg2#"/>
     </comp>
-    <comp lib="4" loc="(830,650)" name="Register">
+    <comp lib="0" loc="(740,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
       <a name="width" val="32"/>
-      <a name="label" val="$13 $t5"/>
+      <a name="label" val="$ra Value"/>
+      <a name="labelloc" val="north"/>
     </comp>
-    <comp lib="4" loc="(830,420)" name="Register">
+    <comp lib="4" loc="(630,420)" name="Register">
       <a name="width" val="32"/>
-      <a name="label" val="$5 $a1"/>
-    </comp>
-    <comp lib="0" loc="(420,830)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s1"/>
-    </comp>
-    <comp lib="4" loc="(530,420)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$2 $v0"/>
+      <a name="label" val="$3 $v1"/>
     </comp>
     <comp lib="2" loc="(210,940)" name="Demultiplexer">
       <a name="selloc" val="tr"/>
       <a name="select" val="3"/>
       <a name="disabled" val="0"/>
     </comp>
-    <comp lib="0" loc="(130,220)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Write Enable"/>
+    <comp lib="6" loc="(47,256)" name="Text">
+      <a name="text" val="输入引脚"/>
+      <a name="font" val="SansSerif bold 12"/>
     </comp>
-    <comp lib="4" loc="(930,420)" name="Register">
+    <comp lib="0" loc="(300,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
       <a name="width" val="32"/>
-      <a name="label" val="$6 $a2"/>
+      <a name="label" val="Reg2"/>
+      <a name="labelloc" val="east"/>
     </comp>
     <comp lib="2" loc="(1290,1160)" name="Multiplexer">
       <a name="facing" val="south"/>
@@ -836,26 +699,253 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="enable" val="false"/>
     </comp>
+    <comp lib="4" loc="(630,650)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$11 $t3"/>
+    </comp>
+    <comp lib="0" loc="(200,1170)" name="Constant"/>
+    <comp lib="4" loc="(1030,650)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$15 $t7"/>
+    </comp>
     <comp lib="0" loc="(150,160)" name="Tunnel">
       <a name="width" val="32"/>
       <a name="label" val="write_data"/>
     </comp>
-    <comp lib="4" loc="(1030,880)" name="Register">
+    <comp lib="0" loc="(560,190)" name="Tunnel">
+      <a name="facing" val="north"/>
       <a name="width" val="32"/>
-      <a name="label" val="$23 $s7"/>
+      <a name="label" val="$v0"/>
     </comp>
-    <comp lib="0" loc="(200,710)" name="Constant"/>
+    <comp lib="4" loc="(530,420)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$2 $v0"/>
+    </comp>
+    <comp lib="0" loc="(130,100)" name="Pin">
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Write Reg#"/>
+    </comp>
+    <comp lib="0" loc="(130,220)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Write Enable"/>
+    </comp>
+    <comp lib="2" loc="(210,480)" name="Demultiplexer">
+      <a name="select" val="3"/>
+      <a name="disabled" val="0"/>
+    </comp>
+    <comp lib="0" loc="(200,940)" name="Constant"/>
+    <comp lib="0" loc="(420,830)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="$s1"/>
+    </comp>
+    <comp lib="4" loc="(430,880)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$17 $s1"/>
+    </comp>
+    <comp lib="4" loc="(830,420)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$5 $a1"/>
+    </comp>
+    <comp lib="4" loc="(330,1110)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$24 $t8"/>
+    </comp>
+    <comp lib="0" loc="(320,830)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="$s0"/>
+    </comp>
+    <comp lib="0" loc="(130,70)" name="Pin">
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Reg2"/>
+    </comp>
+    <comp lib="0" loc="(130,160)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Din"/>
+    </comp>
+    <comp lib="0" loc="(1060,1280)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="32"/>
+      <a name="label" val="write_data"/>
+    </comp>
+    <comp lib="4" loc="(830,1110)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$29 $sp"/>
+    </comp>
+    <comp lib="6" loc="(338,258)" name="Text">
+      <a name="text" val="输出引脚"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(130,250)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Clock"/>
+    </comp>
     <comp lib="4" loc="(430,650)" name="Register">
       <a name="width" val="32"/>
       <a name="label" val="$9 $t1"/>
+    </comp>
+    <comp lib="6" loc="(606,39)" name="Text">
+      <a name="text" val="Debug引脚，便于观测寄存器值"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(150,40)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="reg1#"/>
+    </comp>
+    <comp lib="6" loc="(606,257)" name="Text">
+      <a name="text" val="请勿修改引脚以及封装，直接使用隧道连接电路"/>
+    </comp>
+    <comp lib="0" loc="(650,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="$s2 Value"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="0" loc="(740,420)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="$a0"/>
+    </comp>
+    <comp lib="4" loc="(330,650)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$8 $t0"/>
+    </comp>
+    <comp lib="0" loc="(520,830)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="$s2"/>
+    </comp>
+    <comp lib="2" loc="(50,830)" name="Demultiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="select" val="2"/>
+      <a name="disabled" val="0"/>
+    </comp>
+    <comp lib="4" loc="(430,420)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$1 $at"/>
+    </comp>
+    <comp lib="0" loc="(1290,1180)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="32"/>
+      <a name="label" val="reg2"/>
+    </comp>
+    <comp lib="4" loc="(730,420)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$4 $a0"/>
+    </comp>
+    <comp lib="2" loc="(210,710)" name="Demultiplexer">
+      <a name="select" val="3"/>
+      <a name="disabled" val="0"/>
+    </comp>
+    <comp lib="0" loc="(1090,1210)" name="Tunnel">
+      <a name="label" val="clk"/>
     </comp>
     <comp lib="0" loc="(1480,260)" name="Tunnel">
       <a name="width" val="5"/>
       <a name="label" val="reg1#"/>
     </comp>
+    <comp lib="0" loc="(80,710)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="5"/>
+      <a name="label" val="write_reg#"/>
+    </comp>
+    <comp lib="0" loc="(60,750)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="WE"/>
+    </comp>
+    <comp lib="0" loc="(280,80)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="reg1"/>
+    </comp>
+    <comp lib="0" loc="(160,250)" name="Tunnel">
+      <a name="label" val="clk"/>
+    </comp>
+    <comp lib="0" loc="(40,830)" name="Constant"/>
+    <comp lib="0" loc="(540,420)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="$v0"/>
+    </comp>
+    <comp lib="4" loc="(930,880)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$22 $s6"/>
+    </comp>
+    <comp lib="4" loc="(1030,880)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$23 $s7"/>
+    </comp>
+    <comp lib="0" loc="(650,190)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="32"/>
+      <a name="label" val="$s2"/>
+    </comp>
+    <comp lib="4" loc="(930,1110)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$30 $fp"/>
+    </comp>
     <comp lib="4" loc="(630,1110)" name="Register">
       <a name="width" val="32"/>
       <a name="label" val="$27 $k1"/>
+    </comp>
+    <comp lib="4" loc="(730,880)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$20 $s4"/>
+    </comp>
+    <comp lib="0" loc="(200,710)" name="Constant"/>
+    <comp lib="0" loc="(280,180)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="reg2"/>
+    </comp>
+    <comp lib="0" loc="(150,100)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="write_reg#"/>
+    </comp>
+    <comp lib="4" loc="(1030,420)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$7 $a3"/>
+    </comp>
+    <comp lib="0" loc="(200,480)" name="Constant"/>
+    <comp lib="0" loc="(130,40)" name="Pin">
+      <a name="width" val="5"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Reg1#"/>
+    </comp>
+    <comp lib="4" loc="(530,650)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$10 $t2"/>
+    </comp>
+    <comp lib="4" loc="(630,880)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$19 $s3"/>
+    </comp>
+    <comp lib="0" loc="(560,150)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="$v0 Value"/>
+      <a name="labelloc" val="north"/>
+    </comp>
+    <comp lib="4" loc="(430,1110)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$25 $t9"/>
+    </comp>
+    <comp lib="4" loc="(330,880)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$16 $s0"/>
+    </comp>
+    <comp lib="2" loc="(210,1170)" name="Demultiplexer">
+      <a name="selloc" val="tr"/>
+      <a name="select" val="3"/>
+      <a name="disabled" val="0"/>
+    </comp>
+    <comp lib="4" loc="(730,650)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$12 $t4"/>
     </comp>
     <comp lib="2" loc="(1290,240)" name="Multiplexer">
       <a name="facing" val="north"/>
@@ -864,69 +954,27 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="enable" val="false"/>
     </comp>
-    <comp lib="6" loc="(47,256)" name="Text">
-      <a name="text" val="输入引脚"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(200,940)" name="Constant"/>
-    <comp lib="0" loc="(160,220)" name="Tunnel">
-      <a name="label" val="WE"/>
-    </comp>
-    <comp lib="4" loc="(330,650)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$8 $t0"/>
-    </comp>
-    <comp lib="4" loc="(930,880)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$22 $s6"/>
-    </comp>
-    <comp lib="4" loc="(630,650)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$11 $t3"/>
-    </comp>
-    <comp lib="6" loc="(338,258)" name="Text">
-      <a name="text" val="输出引脚"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="4" loc="(530,880)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$18 $s2"/>
-    </comp>
-    <comp lib="4" loc="(730,1110)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$28 $gp"/>
-    </comp>
-    <comp lib="4" loc="(330,420)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$0 $Zero"/>
-    </comp>
-    <comp lib="0" loc="(560,190)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s1"/>
-    </comp>
-    <comp lib="0" loc="(280,80)" name="Tunnel">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(1290,220)" name="Tunnel">
+      <a name="facing" val="south"/>
       <a name="width" val="32"/>
       <a name="label" val="reg1"/>
     </comp>
-    <comp lib="4" loc="(1030,1110)" name="Register">
+    <comp lib="0" loc="(740,190)" name="Tunnel">
+      <a name="facing" val="north"/>
       <a name="width" val="32"/>
-      <a name="label" val="$31 $ra"/>
+      <a name="label" val="$ra"/>
     </comp>
-    <comp lib="0" loc="(200,1170)" name="Constant"/>
+    <comp lib="4" loc="(830,880)" name="Register">
+      <a name="width" val="32"/>
+      <a name="label" val="$21 $s5"/>
+    </comp>
     <comp lib="0" loc="(1070,1100)" name="Tunnel">
       <a name="width" val="32"/>
       <a name="label" val="$ra"/>
     </comp>
-    <comp lib="0" loc="(130,100)" name="Pin">
+    <comp lib="0" loc="(1480,1140)" name="Tunnel">
       <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Write Reg#"/>
-    </comp>
-    <comp lib="0" loc="(150,40)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="reg1#"/>
+      <a name="label" val="reg2#"/>
     </comp>
     <comp lib="0" loc="(300,80)" name="Pin">
       <a name="facing" val="west"/>
@@ -935,53 +983,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Reg1"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="4" loc="(430,1110)" name="Register">
+    <comp lib="4" loc="(930,420)" name="Register">
       <a name="width" val="32"/>
-      <a name="label" val="$25 $t9"/>
+      <a name="label" val="$6 $a2"/>
     </comp>
-    <comp lib="0" loc="(1290,220)" name="Tunnel">
-      <a name="facing" val="south"/>
+    <comp lib="4" loc="(830,650)" name="Register">
       <a name="width" val="32"/>
-      <a name="label" val="reg1"/>
-    </comp>
-    <comp lib="4" loc="(730,420)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$4 $a0"/>
-    </comp>
-    <comp lib="0" loc="(520,830)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="32"/>
-      <a name="label" val="$s2"/>
-    </comp>
-    <comp lib="0" loc="(80,710)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="5"/>
-      <a name="label" val="write_reg#"/>
-    </comp>
-    <comp lib="6" loc="(606,257)" name="Text">
-      <a name="text" val="请勿修改引脚以及封装，直接使用隧道连接电路"/>
-    </comp>
-    <comp lib="0" loc="(130,250)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="Clock"/>
-    </comp>
-    <comp lib="4" loc="(430,420)" name="Register">
-      <a name="width" val="32"/>
-      <a name="label" val="$1 $at"/>
-    </comp>
-    <comp lib="0" loc="(280,180)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="32"/>
-      <a name="label" val="reg2"/>
-    </comp>
-    <comp lib="0" loc="(130,70)" name="Pin">
-      <a name="width" val="5"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Reg2"/>
-    </comp>
-    <comp lib="2" loc="(210,480)" name="Demultiplexer">
-      <a name="select" val="3"/>
-      <a name="disabled" val="0"/>
+      <a name="label" val="$13 $t5"/>
     </comp>
   </circuit>
   <circuit name="test">
