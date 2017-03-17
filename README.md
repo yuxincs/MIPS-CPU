@@ -13,7 +13,7 @@ The specific circuit diagram is as below:
   
 ### Register File
 ##### Description
-This regfile is implemented to simulate the 32 registers running in the MIPS CPU, with the signals passed to it, it can store data into register according to the given register number, and it can direclt load up to two register's data to the port.
+This regfile is implemented to simulate the 32 registers running in the MIPS CPU, with the signals passed to it, it can store data into register according to the given register number, and it can directly load up to two register's data to the port.
 ##### Overview
   ![#3](https://raw.githubusercontent.com/RyanWangGit/MIPS_CPU/master/Screenshots/RegFile.png)
   
