@@ -2,6 +2,8 @@
 
 A Simulative CPU Running on MIPS Instruction System Based on Logisim.
 
+![MIPS-CPU-GIF](https://user-images.githubusercontent.com/10323518/31847758-7194fee4-b5ef-11e7-8d66-48773d4e3897.gif)
+
 ## ALU Circuit
 #### Description
 This ALU is implememted to do 13 operations determined by operator S, with two input X/Y, it can produce result according to the operator S and emit signed and unsigned overflow/Equal signals.
