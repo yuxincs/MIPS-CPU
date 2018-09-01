@@ -1,4 +1,5 @@
-#理想流水线测试，所有指令均无相关性，一共17条指令，5段流水线执行周期数应该是5+(17-1）=21
+# Ideal pipleline test. All instructions are free of hazards
+# 17 Instructions in total, the total cycles of 5-segment pipeline should be 5 + (17 - 1锟斤拷= 21
 addi $s0,$zero, 0
 addi $s1,$zero, 0
 addi $s2,$zero, 0
@@ -12,7 +13,7 @@ sw $s1, 4($s0)
 sw $s2, 8($s0)
 sw $s3, 12($s0)
 addi $v0,$zero,10         # system call for exit
-addi $s1,$zero, 0            #消除相关性
+addi $s1,$zero, 0         # clear hazard
 addi $s2,$zero, 0
 addi $s3,$zero, 0
-syscall                   # we are out of here.   
+syscall                   # done
