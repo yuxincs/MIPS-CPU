@@ -1,5 +1,5 @@
 # Ideal pipleline test. All instructions are free of hazards
-# 17 Instructions in total, the total cycles of 5-segment pipeline should be 5 + (17 - 1��= 21
+# 17 Instructions in total, the total cycles of 5-segment pipeline should be 5 + (17 - 1)= 21
 addi $s0,$zero, 0
 addi $s1,$zero, 0
 addi $s2,$zero, 0
