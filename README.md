@@ -21,7 +21,7 @@ This regfile is implemented to simulate the 32 registers running in the MIPS CPU
   
 ## Single Cycle CPU
 #### Description
-Fully organized according to the circuit given by `Mars`' `MIPS X-Ray` function to be consistent.
+Organized according to the circuit given by `Mars`' `MIPS X-Ray` function for better understanding.
 #### Overview
   ![singlecyclecpu](https://cloud.githubusercontent.com/assets/10323518/24080239/d1bd5ae6-0cd5-11e7-927d-a2b877a9b139.png)
   
@@ -48,4 +48,4 @@ There are various programs for testing the CPU in the `Benchmarks` folder, with 
 All the benchmarks are assembled by `Mars`, a powerful MIPS assembling and debugging tool.
 
 ## License
-[MIT](https://github.com/RyanWangGit/MIPS-CPU/blob/master/LICENSE).
+[MIT](https://github.com/yxwangcs/MIPS-CPU/blob/master/LICENSE).
