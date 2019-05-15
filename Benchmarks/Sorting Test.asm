@@ -1,5 +1,5 @@
 # Sort the memory 1-15 in descending order
-# Please set Memory Configuration to Compact��data at address 0 in Mars Setting to compile
+# Please set Memory Configuration to Compact and data at address 0 in Mars Setting to compile
  .text
 sort_init:
  addi $s0,$0,-1
