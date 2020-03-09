@@ -6,13 +6,13 @@ A Simulative CPU Running on MIPS Instruction System Based on Logisim.
 
 Two categories of CPU are implemented in this repository for learning purposes:
 
-* **Single Cycle CPU:** Each instruction takes exactly one CPU cylcle to finish.
+* **Single Cycle CPU:** Each instruction takes exactly one CPU cylcle to finish. ([Single_Cycle_CPU.circ](https://github.com/yxwangcs/MIPS-CPU/blob/master/Single_Cycle_CPU.circ))
 
 * **Pipelined CPU:** A five-stage pipelined CPU. There are two versions for solving the [hazards](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)) introduced by pipelining: 
 
-  1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) for all hazards. 
+  1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) for all hazards. ([Pipeline_CPU_Bubbling.circ](https://github.com/yxwangcs/MIPS-CPU/blob/master/Pipeline_CPU_Bubbling.circ))
 
-  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance.
+  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([Pipeline_CPU.circ](https://github.com/yxwangcs/MIPS-CPU/blob/master/Pipeline_CPU.circ))
 
 ## Supported Instructions
 Only a subet of the MIPS instruction set is supported:
