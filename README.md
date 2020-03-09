@@ -8,7 +8,7 @@ Two categories of CPU are implemented in this repository for learning purposes:
 
 * **Single Cycle CPU:** Each instruction takes exactly one CPU cylcle to finish.
 
-* **Pipelined CPU:** A five-stage pipelined CPU. There are two versions for solving the [hazards](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)) introduced by pipelining the instructions: 
+* **Pipelined CPU:** A five-stage pipelined CPU. There are two versions for solving the [hazards](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)) introduced by pipelining: 
 
   1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) for all hazards. 
 
