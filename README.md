@@ -35,7 +35,7 @@ Nor|nor $rd, $rs, $rt|Exception Return|eret
 Load Word|lw $rt, offset($rs)| | 
 
 
-Refer to [Quick Reference](https://s3-eu-west-1.amazonaws.com/downloads-mips/documents/MD00565-2B-MIPS32-QRC-01.01.pdf) and [Complete Instruction Manual](https://s3-eu-west-1.amazonaws.com/downloads-mips/documents/MD00086-2B-MIPS32BIS-AFP-6.06.pdf) for complete specifications.
+Refer to [Quick Reference](https://www.mips.com/?do-download=mips32-instruction-set-quick-reference-v1-01) and [Complete Instruction Manual](https://www.mips.com/?do-download=the-mips32-instruction-set-v6-06) for complete specifications.
 
 
 ## Single Cycle CPU
@@ -84,9 +84,9 @@ This regfile is implemented to simulate the 32 registers running in the MIPS CPU
 ## References
 [1] Harris, David, and Sarah Harris. Digital design and computer architecture. Morgan Kaufmann, 2010.
 
-[2] [MIPS Quick Reference](https://s3-eu-west-1.amazonaws.com/downloads-mips/documents/MD00565-2B-MIPS32-QRC-01.01.pdf)
+[2] [MIPS Quick Reference](https://www.mips.com/?do-download=mips32-instruction-set-quick-reference-v1-01)
 
-[3] [MIPS® Architecture for Programmers Volume II-A: The MIPS32® Instruction Set Manual](https://s3-eu-west-1.amazonaws.com/downloads-mips/documents/MD00086-2B-MIPS32BIS-AFP-6.06.pdf)
+[3] [MIPS® Architecture for Programmers Volume II-A: The MIPS32® Instruction Set Manual](https://www.mips.com/?do-download=the-mips32-instruction-set-v6-06)
 
 ## License
 [MIT](https://github.com/yxwangcs/MIPS-CPU/blob/master/LICENSE).
