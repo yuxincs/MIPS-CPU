@@ -39,7 +39,6 @@ Refer to [Quick Reference](https://s3-eu-west-1.amazonaws.com/downloads-mips/doc
 
 
 ## Single Cycle CPU
-#### Description
 Organized according to the circuit given by `MIPS X-Ray` of `Mars` for better understanding.
 #### Overview
   ![singlecyclecpu](https://cloud.githubusercontent.com/assets/10323518/24080239/d1bd5ae6-0cd5-11e7-927d-a2b877a9b139.png)
@@ -68,7 +67,6 @@ All the benchmarks are assembled by `Mars`, a powerful MIPS assembling and debug
 
 ## General Components
 ### ALU Circuit
-#### Description
 This ALU is implememted to do 13 operations determined by operator S, with two input X/Y, it can produce result according to the operator S and emit signed and unsigned overflow/Equal signals.
 The detailed circuit diagram is as below:
 #### Overview
@@ -79,7 +77,6 @@ The detailed circuit diagram is as below:
   ![alu_2](https://cloud.githubusercontent.com/assets/10323518/24080237/d19ac71a-0cd5-11e7-8197-2de472d63d7c.png)
   
 ### Register File
-#### Description
 This regfile is implemented to simulate the 32 registers running in the MIPS CPU, with the signals passed to it, it can store data into register according to the given register number, and it can directly load up to two register's data to the port.
 #### Overview
   ![regfile](https://cloud.githubusercontent.com/assets/10323518/24080241/d1bdb4be-0cd5-11e7-9aa7-e64e94d401a0.png)
