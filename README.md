@@ -6,13 +6,13 @@ A Simulative CPU Running on MIPS Instruction System Based on [Logisim](http://ww
 
 Two categories of CPU are implemented in this repository for learning purposes:
 
-* **Single Cycle CPU:** Each instruction takes exactly one CPU cylcle to finish. ([Single_Cycle_CPU.circ](https://github.com/yxwangcs/MIPS-CPU/blob/master/Single_Cycle_CPU.circ))
+* **Single Cycle CPU:** Each instruction takes exactly one CPU cylcle to finish. ([Single_Cycle_CPU.circ](https://github.com/yuxincs/MIPS-CPU/blob/master/Single_Cycle_CPU.circ))
 
 * **Pipelined CPU:** A five-stage pipelined CPU. There are two versions for solving the [hazards](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)) introduced by pipelining: 
 
   1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) for all hazards. ([Pipeline_CPU_Bubbling.circ](https://github.com/yxwangcs/MIPS-CPU/blob/master/Pipeline_CPU_Bubbling.circ))
 
-  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([Pipeline_CPU.circ](https://github.com/yxwangcs/MIPS-CPU/blob/master/Pipeline_CPU.circ))
+  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([Pipeline_CPU.circ](https://github.com/yuxincs/MIPS-CPU/blob/master/Pipeline_CPU.circ))
 
 ## Supported Instructions
 Only a subet of the MIPS instruction set is supported:
@@ -56,7 +56,7 @@ Moreover, this version of pipeline CPU is equipped with a `CP0` which handles ex
 The CPU runs into exception mode on clicking one of the buttons, running an exception service program
 which displays `2` or `4` or `8` determined by the source number of the clicked button.
 
-The [exception service program](https://github.com/yxwangcs/MIPS-CPU/blob/master/Benchmarks/Exception%20Service.asm) handles saving environments (including saving PC value to EPC), and supports multi-level interruption by saving everything to a stack in RAM for each level of interruption. This program has to be loaded into the second ROM (with start address `0x00000800`) in the CPU, which is the special address reserved for the service program. Upon exception, PC will be set to `0x00000800` to run the service program.
+The [exception service program](https://github.com/yuxincs/MIPS-CPU/blob/master/Benchmarks/Exception%20Service.asm) handles saving environments (including saving PC value to EPC), and supports multi-level interruption by saving everything to a stack in RAM for each level of interruption. This program has to be loaded into the second ROM (with start address `0x00000800`) in the CPU, which is the special address reserved for the service program. Upon exception, PC will be set to `0x00000800` to run the service program.
 
 ### Overview
    ![pipeline](https://cloud.githubusercontent.com/assets/10323518/24080240/d1bd5c8a-0cd5-11e7-81e6-50b0c80e13c7.png)
@@ -90,4 +90,4 @@ This regfile is implemented to simulate the 32 registers running in the MIPS CPU
 [3] [MIPS® Architecture for Programmers Volume II-A: The MIPS32® Instruction Set Manual](https://www.mips.com/?do-download=the-mips32-instruction-set-v6-06)
 
 ## License
-[MIT](https://github.com/yxwangcs/MIPS-CPU/blob/master/LICENSE).
+[MIT](https://github.com/yuxincs/MIPS-CPU/blob/master/LICENSE).
