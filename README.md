@@ -2,7 +2,7 @@
 
 A Simulative CPU Running on MIPS Instruction System Based on [Logisim](http://www.cburch.com/logisim/) (Newer version [Logisim Evolution](https://github.com/reds-heig/logisim-evolution) is not supported).
 
-![MIPS-CPU-GIF](https://user-images.githubusercontent.com/10323518/31847758-7194fee4-b5ef-11e7-8d66-48773d4e3897.gif)
+![MIPS-CPU-GIF](https://github.com/yuxincs/MIPS-CPU/raw/main/demo.gif)
 
 Two categories of CPU are implemented in this repository for learning purposes:
 
