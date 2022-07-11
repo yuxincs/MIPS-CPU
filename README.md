@@ -96,10 +96,11 @@ displayed instead.
 
 For special service programs, an exception service program is provided at 
 `programs/exception_service.asm` along with assembled  hex file. It handles saving environments 
-(including saving PC value to EPC), and supports multi-level interruption by saving everything to 
-a stack in RAM for each level of interruption. This program has to be loaded into the second ROM in 
-MIPS-CPU, which is the special address reserved for the service program. Upon exception, PC will be 
-set to `0x00000800` to run the service program. It is preloaded in the second ROM in all versions of 
+(including saving PC value to EPC), executing an example service program, and then restore the 
+environments at the end. It supports multi-level interruption by saving everything to a stack in 
+RAM for each level of interruption. This program has to be loaded into the second ROM in MIPS-CPU, 
+which is the special address reserved for the service program. Upon exception, PC will be set to 
+`0x00000800` to run the service program. It is preloaded in the second ROM in all versions of 
 MIPS-CPU that support exception handling.
 
 ## Details
