@@ -480,8 +480,6 @@ error:
 # ==== Start of (Partial) Jump Tests ====
 # This is part of the jump test at the beginning of this benchmark program, which is intentionally
 # put here to test the ability for long jumps.
-# This piece of code can only be reached by j long_jmp (i.e., cannot be reached by sequentially
-# running the program), so at the beginning we directly jump to the end.
 long_jmp:
     addi    $s0,        $zero,          0
     addi    $s0,        $s0,            1
