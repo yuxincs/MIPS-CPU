@@ -12,7 +12,7 @@ Two categories of CPU are implemented in this repository for learning purposes:
 
   1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) for all hazards. ([pipeline_cpu_bubbling.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu_bubbling.circ))
 
-  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([Pipeline_CPU.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu.circ))
+  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([pipeline_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu.circ))
 
 ## Supported Instructions
 Only a subet of the MIPS instruction set is supported:
