@@ -4,7 +4,7 @@ A Simulative CPU Running on MIPS Instruction System Based on [Logisim](http://ww
 
 ![MIPS-CPU-GIF](https://github.com/yuxincs/MIPS-CPU/raw/main/demo.gif)
 
-Two categories of CPU are implemented in this repository for learning purposes:
+Two categories of CPU, totaling three implementations, exist in this repository:
 
 * **Single Cycle CPU:** Each instruction takes exactly one CPU cylcle to finish. ([single_cycle_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/single_cycle_cpu.circ))
 
@@ -12,10 +12,23 @@ Two categories of CPU are implemented in this repository for learning purposes:
 
   1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) for all hazards. ([pipeline_cpu_bubbling.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu_bubbling.circ))
 
-  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([pipeline_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu.circ))
+  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([pipeline_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu.circ)).
 
-## Supported Instructions
-Only a subet of the MIPS instruction set is supported:
+Note that `alu.circ` for ALU implementation and `regfile.circ` for register file implementation are shared components among the CPUs, and must be present in the same folder as the CPU circ file for it to work.
+
+The main and most feature-rich version is the pipelined CPU with operand forwarding, which will be referred to as MIPS-CPU in the rest of this README.
+
+## Features
+
+* Five-Stage Pipeline.
+
+* [Hazard](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)) Handling with Operand Forwarding.
+
+* 7-Seg Display.
+
+* Exception Handling: MIPS-CPU (and single cycle CPU) is equipped with a co-processor `CP0` which (only) handles exception (interruption), with 3 intteruption source buttons named `ExpSrc[0-2]`. The CPU runs into exception mode on clicking one of the buttons, running an exception service program which displays 2 or 4 or 8 determined by the source number of the clicked button.
+
+* Supported Instruction Set:
 
 **Instruction**|**Format**|**Instruction**|**Format**
 :-----:|:-----:|:-----:|:-----:
@@ -34,31 +47,7 @@ Or Immediate|ori $rt, $rs, immediate|Move To Co-processor 0|mtc0 $t0,$12
 Nor|nor $rd, $rs, $rt|Exception Return|eret
 Load Word|lw $rt, offset($rs)| | 
 
-
-Refer to [Quick Reference](https://www.mips.com/?do-download=mips32-instruction-set-quick-reference-v1-01) and [Complete Instruction Manual](https://www.mips.com/?do-download=the-mips32-instruction-set-v6-06) for complete specifications.
-
-
-## Single Cycle CPU
-Organized according to the circuit given by `MIPS X-Ray` of `Mars` for better understanding.
-#### Overview
-  ![singlecyclecpu](https://cloud.githubusercontent.com/assets/10323518/24080239/d1bd5ae6-0cd5-11e7-927d-a2b877a9b139.png)
   
-## Pipeline CPU (Pipeline Bubbling)
-Used `Pipeline Bubbling` to prevent data and control hazard.
-### Overview
-  ![pipeline_bubble](https://cloud.githubusercontent.com/assets/10323518/24080238/d1bc1910-0cd5-11e7-8c7c-f3de3d97a30b.png)
-
-## Pipeline CPU (Bubbling + Operand Forwarding)
-*Operand Forwarding* is used instead of *Bubbling* to prevent data hazard, which runs less cycles when data hazards occur.
-
-Moreover, this version of pipeline CPU is equipped with a `CP0` which handles exception (interruption), with 3 intteruption source buttons named `ExpSrc0` `ExpSrc1` `ExpSrc2`
-
-The CPU runs into exception mode on clicking one of the buttons, running an exception service program
-which displays `2` or `4` or `8` determined by the source number of the clicked button.
-
-### Overview
-   ![pipeline](https://cloud.githubusercontent.com/assets/10323518/24080240/d1bd5c8a-0cd5-11e7-81e6-50b0c80e13c7.png)
-   
 ## Assembling and Loading Programs
 
 There are many existing MIPS assemblers you can use, we used 
@@ -99,29 +88,18 @@ the CPU, which is the special address reserved for the service program. Upon exc
 set to `0x00000800` to run the service program. This program is preloaded in the second ROM in all 
 version of MIPS-CPU as well.
 
+Refer to Quick Reference and Complete Instruction Manual from [MIPS](https://www.mips.com/products/architectures/mips32-2/) for complete specifications.
 
-## Shared Component
-### ALU Circuit
-This ALU is implememted to do 13 operations determined by operator S, with two input X/Y, it can produce result according to the operator S and emit signed and unsigned overflow/Equal signals.
-The detailed circuit diagram is as below:
-#### Overview
+## Details
 
-<img src="https://cloud.githubusercontent.com/assets/10323518/24080236/d172a820-0cd5-11e7-812c-e60f21efe0e0.png" alt="alu_1" width="70%">
-
-#### Adder Circuit with Overflow Detection
-  ![alu_2](https://cloud.githubusercontent.com/assets/10323518/24080237/d19ac71a-0cd5-11e7-8197-2de472d63d7c.png)
-  
-### Register File
-This regfile is implemented to simulate the 32 registers running in the MIPS CPU, with the signals passed to it, it can store data into register according to the given register number, and it can directly load up to two register's data to the port.
-#### Overview
-  ![regfile](https://cloud.githubusercontent.com/assets/10323518/24080241/d1bdb4be-0cd5-11e7-9aa7-e64e94d401a0.png)
+Basic understanding of digital design and MIPS pipelined CPU is strongly recommended ([1] is a great textbook for learning). For details about implementations please refer to the [wiki page](https://github.com/yuxincs/MIPS-CPU/wiki).
 
 ## References
 [1] Harris, David, and Sarah Harris. Digital design and computer architecture. Morgan Kaufmann, 2010.
 
-[2] [MIPS Quick Reference](https://www.mips.com/?do-download=mips32-instruction-set-quick-reference-v1-01)
+[2] [MIPS Quick Reference](https://s3-eu-west-1.amazonaws.com/downloads-mips/documents/MD00565-2B-MIPS32-QRC-01.01.pdf)
 
-[3] [MIPS® Architecture for Programmers Volume II-A: The MIPS32® Instruction Set Manual](https://www.mips.com/?do-download=the-mips32-instruction-set-v6-06)
+[3] [MIPS® Architecture for Programmers Volume II-A: The MIPS32® Instruction Set Manual](https://s3-eu-west-1.amazonaws.com/downloads-mips/documents/MD00086-2B-MIPS32BIS-AFP-6.06.pdf)
 
 ## License
 [MIT](https://github.com/yuxincs/MIPS-CPU/blob/master/LICENSE).
