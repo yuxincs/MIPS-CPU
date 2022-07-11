@@ -49,6 +49,7 @@ Or Immediate           | ori $rt, $rs, immediate   | Move To Co-processor 0    |
 Nor                    | nor $rd, $rs, $rt         | Exception Return          | eret                    
 Load Word              | lw $rt, offset($rs) 
 
+Refer to Quick Reference and Complete Instruction Manual from [MIPS](https://www.mips.com/products/architectures/mips32-2/) for complete specifications.
   
 ## Assembling and Loading Programs
 
@@ -89,8 +90,6 @@ a stack in RAM for each level of interruption. This program has to be loaded int
 MIPS-CPU, which is the special address reserved for the service program. Upon exception, PC will be 
 set to `0x00000800` to run the service program. It is preloaded in the second ROM in all versions of 
 MIPS-CPU that support exception handling.
-
-Refer to Quick Reference and Complete Instruction Manual from [MIPS](https://www.mips.com/products/architectures/mips32-2/) for complete specifications.
 
 ## Details
 
