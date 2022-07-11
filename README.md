@@ -1,6 +1,6 @@
 # MIPS-CPU
 
-A Simulative CPU Running on MIPS Instruction System Based on [Logisim](http://www.cburch.com/logisim/) (Newer version [Logisim Evolution](https://github.com/reds-heig/logisim-evolution) is not supported).
+A Simulative 32-bit CPU Running on MIPS Instruction System Based on [Logisim](http://www.cburch.com/logisim/) (Newer version [Logisim Evolution](https://github.com/reds-heig/logisim-evolution) is not supported).
 
 ![MIPS-CPU-GIF](https://github.com/yuxincs/MIPS-CPU/raw/main/demo.gif)
 
@@ -26,26 +26,28 @@ The main and most feature-rich version is the pipelined CPU with operand forward
 
 * 7-Seg Display.
 
-* Exception Handling: MIPS-CPU (and single cycle CPU) is equipped with a co-processor `CP0` which (only) handles exception (interruption), with 3 intteruption source buttons named `ExpSrc[0-2]`. The CPU runs into exception mode on clicking one of the buttons, running an exception service program which displays 2 or 4 or 8 determined by the source number of the clicked button.
+* 10-bit Address Space for ROM (Code) and RAM (Memory).
+
+* Exception Handling: MIPS-CPU (and single cycle CPU) is equipped with a co-processor `CP0` which (only) handles exception (interruption), with 3 interruption source buttons named `ExpSrc[0-2]`. The CPU runs into exception mode on clicking one of the buttons, running an exception service program which displays 2 or 4 or 8 determined by the source number of the clicked button.
 
 * Supported Instruction Set:
 
-**Instruction**|**Format**|**Instruction**|**Format**
-:-----:|:-----:|:-----:|:-----:
-Add|add $rd, $rs, $rt|Store Word|sw $rt, offset($rs)
-Add Immediate|addi $rt, $rs, immediate|Branch on Equal|beq $rs, $rt, label
-Add Immediate Unsigned|addiu $rt, $rs, immediate|Branch on Not Equal|bne $rs, $rt, label
-Add Unsigned|addu $rd, $rs, $rt|Set Less Than|slt $rd, $rs, $rt
-And|and $rd, $rs, $rt|Set Less Than Immediate|slti $rt, $rs, immediate
-And Immediate|andi $rt, $rs, immediate|Set Less Than Unsigned|sltu $rd, $rs, $rt
-Shift Left Logical|sll $rd, $rt, shamt|Jump|j label
-Shift Right Arithmetic|sra $rd, $rt, shamt|Jump and Link|jal label
-Shift Right Logical|srl $rd, $rt, shamt|Jump Register|jr $rs
-Sub|sub $rd, $rs, $rt|Syscall（Display or Exit）|syscall
-Or|or $rd, $rs, $rt|Move From Co-processor 0|mfc0 $t0,$12
-Or Immediate|ori $rt, $rs, immediate|Move To Co-processor 0|mtc0 $t0,$12
-Nor|nor $rd, $rs, $rt|Exception Return|eret
-Load Word|lw $rt, offset($rs)| | 
+**Instruction**        | **Format**                | **Instruction**           | **Format**              
+:--------------------: | :-----------------------: | :-----------------------: | :----------------------:
+Add                    | add $rd, $rs, $rt         | Store Word                | sw $rt, offset($rs)     
+Add Immediate          | addi $rt, $rs, immediate  | Branch on Equal           | beq $rs, $rt, label     
+Add Immediate Unsigned | addiu $rt, $rs, immediate | Branch on Not Equal       | bne $rs, $rt, label     
+Add Unsigned           | addu $rd, $rs, $rt        | Set Less Than             | slt $rd, $rs, $rt       
+And                    | and $rd, $rs, $rt         | Set Less Than Immediate   | slti $rt, $rs, immediate
+And Immediate          | andi $rt, $rs, immediate  | Set Less Than Unsigned    | sltu $rd, $rs, $rt      
+Shift Left Logical     | sll $rd, $rt, shamt       | Jump                      | j label                 
+Shift Right Arithmetic | sra $rd, $rt, shamt       | Jump and Link             | jal label               
+Shift Right Logical    | srl $rd, $rt, shamt       | Jump Register             | jr $rs                  
+Sub                    | sub $rd, $rs, $rt         | Syscall (Display or Exit) | syscall                 
+Or                     | or $rd, $rs, $rt          | Move From Co-processor 0  | mfc0 $t0,$12            
+Or Immediate           | ori $rt, $rs, immediate   | Move To Co-processor 0    | mtc0 $t0,$12            
+Nor                    | nor $rd, $rs, $rt         | Exception Return          | eret                    
+Load Word              | lw $rt, offset($rs) 
 
   
 ## Assembling and Loading Programs
@@ -64,11 +66,11 @@ The following steps can be used to obtain an assembled file to be loaded in `MIP
   * The hex file can then be loaded into the ROM part of MIPS-CPU for it to execute
 
 ### ROMs for Storing Assembled Programs
-MIPS-CPU uses 10 bits for address space, meaning a total of 1KiB ROM space for storing assembled. 
-Some special programs, e.g., exception service programs, require a pre-determined fixed address and
-PC will be set to this address to call service programs when exceptions happen. Therefore, the 1KiB
-ROM is implemented via two two 512B ROMs, where the most significant bit of the address will be 
-used to switch between the two ROMs. The second ROM (with a start address `0x00000800`) then serves
+MIPS-CPU uses 10-bit address space for ROMs. Some special programs, e.g., exception service 
+programs, require a pre-determined fixed  address and PC will be set to this address to call 
+service programs when exceptions happen. Therefore, 10-bit address space ROM is implemented via 
+two ROMs with 9-bit address widths, where the most significant bit of the address will be used 
+to switch between the two ROMs. The second ROM (with a start address `0x00000800`) then serves
 the purpose for loading / storing special service programs and cannot be mixed with normal 
 programs. This design makes it really easy to load normal and special service programs in MIPS-CPU.
 
@@ -84,9 +86,9 @@ For special service programs, an exception service program is provided at
 `programs/exception_service.asm` along with assembled  hex file. It handles saving environments 
 (including saving PC value to EPC), and supports multi-level interruption by saving everything to 
 a stack in RAM for each level of interruption. This program has to be loaded into the second ROM in 
-the CPU, which is the special address reserved for the service program. Upon exception, PC will be 
-set to `0x00000800` to run the service program. This program is preloaded in the second ROM in all 
-version of MIPS-CPU as well.
+MIPS-CPU, which is the special address reserved for the service program. Upon exception, PC will be 
+set to `0x00000800` to run the service program. It is preloaded in the second ROM in all versions of 
+MIPS-CPU that support exception handling.
 
 Refer to Quick Reference and Complete Instruction Manual from [MIPS](https://www.mips.com/products/architectures/mips32-2/) for complete specifications.
 
