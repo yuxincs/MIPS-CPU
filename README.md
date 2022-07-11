@@ -6,17 +6,24 @@ A Simulative 32-bit CPU Running on MIPS Instruction System Based on [Logisim](ht
 
 Two categories of CPU, totaling three implementations, exist in this repository:
 
-* **Single Cycle CPU:** Each instruction takes exactly one CPU cylcle to finish. ([single_cycle_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/single_cycle_cpu.circ))
+* **Single Cycle CPU:** Each instruction takes exactly one CPU cycle to finish. 
+([single_cycle_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/single_cycle_cpu.circ))
 
-* **Pipelined CPU:** A five-stage pipelined CPU. There are two versions for solving the [hazards](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)) introduced by pipelining: 
+* **Pipelined CPU:** A five-stage pipelined CPU. There are two versions for solving the 
+[hazards](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)) introduced by pipelining: 
 
-  1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) for all hazards. ([pipeline_cpu_bubbling.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu_bubbling.circ))
+  1. [Pipeline Bubbling](https://en.wikipedia.org/wiki/Hazard_(computer_architecture)#PIPELINE-FLUSH) 
+  for all hazards. ([pipeline_cpu_bubbling.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu_bubbling.circ))
 
-  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) is used for data hazards to reduce the total number of pipeline stalls for better performance. ([pipeline_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu.circ)).
+  2. Based on Pipeline bubbling, [Operand Forwarding](https://en.wikipedia.org/wiki/Operand_forwarding) 
+  is used for data hazards to reduce the total number of pipeline stalls for better performance. 
+  ([pipeline_cpu.circ](https://github.com/yuxincs/MIPS-CPU/blob/main/src/pipeline_cpu.circ)).
 
-Note that `alu.circ` for ALU implementation and `regfile.circ` for register file implementation are shared components among the CPUs, and must be present in the same folder as the CPU circ file for it to work.
+Note that the common components in `src/common` are shared among the CPUs, and must be present in 
+the same folder as the CPU circ file for it to work.
 
-The main and most feature-rich version is the pipelined CPU with operand forwarding, which will be referred to as MIPS-CPU in the rest of this README.
+The main and most feature-rich version is the pipelined CPU with operand forwarding, which will be 
+referred to as MIPS-CPU in the rest of this README.
 
 ## Features
 
@@ -28,7 +35,10 @@ The main and most feature-rich version is the pipelined CPU with operand forward
 
 * 10-bit Address Space for ROM (Code) and RAM (Memory).
 
-* Exception Handling: MIPS-CPU (and single cycle CPU) is equipped with a co-processor `CP0` which (only) handles exception (interruption), with 3 interruption source buttons named `ExpSrc[0-2]`. The CPU runs into exception mode on clicking one of the buttons, running an exception service program which displays 2 or 4 or 8 determined by the source number of the clicked button.
+* Exception Handling: MIPS-CPU (and single cycle CPU) is equipped with a co-processor `CP0` which 
+(only) handles exception (interruption), with 3 interruption source buttons named `ExpSrc[0-2]`. 
+The CPU runs into exception mode on clicking one of the buttons, running an exception service 
+program which displays 2 or 4 or 8 determined by the source number of the clicked button.
 
 * Supported Instruction Set:
 
@@ -49,7 +59,8 @@ Or Immediate           | ori $rt, $rs, immediate   | Move To Co-processor 0    |
 Nor                    | nor $rd, $rs, $rt         | Exception Return          | eret                    
 Load Word              | lw $rt, offset($rs) 
 
-Refer to Quick Reference and Complete Instruction Manual from [MIPS](https://www.mips.com/products/architectures/mips32-2/) for complete specifications.
+Refer to Quick Reference and Complete Instruction Manual from 
+[MIPS](https://www.mips.com/products/architectures/mips32-2/) for complete specifications.
   
 ## Assembling and Loading Programs
 
@@ -93,7 +104,9 @@ MIPS-CPU that support exception handling.
 
 ## Details
 
-Basic understanding of digital design and MIPS pipelined CPU is strongly recommended ([1] is a great textbook for learning). For details about implementations please refer to the [wiki page](https://github.com/yuxincs/MIPS-CPU/wiki).
+Basic understanding of digital design and MIPS pipelined CPU is strongly recommended ([1] is a 
+great textbook for learning). For details about implementations please refer to the 
+[wiki page](https://github.com/yuxincs/MIPS-CPU/wiki).
 
 ## References
 [1] Harris, David, and Sarah Harris. Digital design and computer architecture. Morgan Kaufmann, 2010.
