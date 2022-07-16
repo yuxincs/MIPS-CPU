@@ -2837,66 +2837,6 @@ c 2011ffff 118c00 2020 24840064 2484ff9c 14800017 2020
       <a name="labelloc" val="east"/>
     </comp>
   </circuit>
-  <circuit name="Immediate_Extend">
-    <a name="circuit" val="Immediate_Extend"/>
-    <a name="clabel" val=""/>
-    <a name="clabelup" val="east"/>
-    <a name="clabelfont" val="SansSerif plain 12"/>
-    <appear>
-      <rect fill="none" height="41" stroke="#000000" stroke-width="2" width="40" x="50" y="50"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="69" y="85">Extend</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="70" y="67">Imme</text>
-      <circ-port height="8" pin="380,330" width="8" x="46" y="66"/>
-      <circ-port height="10" pin="630,330" width="10" x="85" y="65"/>
-      <circ-port height="8" pin="560,280" width="8" x="66" y="46"/>
-      <circ-anchor facing="east" height="6" width="6" x="47" y="47"/>
-    </appear>
-    <wire from="(490,340)" to="(550,340)"/>
-    <wire from="(490,320)" to="(550,320)"/>
-    <wire from="(410,300)" to="(440,300)"/>
-    <wire from="(410,370)" to="(440,370)"/>
-    <wire from="(580,330)" to="(630,330)"/>
-    <wire from="(380,330)" to="(410,330)"/>
-    <wire from="(410,330)" to="(410,370)"/>
-    <wire from="(480,370)" to="(490,370)"/>
-    <wire from="(480,300)" to="(490,300)"/>
-    <wire from="(490,300)" to="(490,320)"/>
-    <wire from="(560,280)" to="(560,310)"/>
-    <wire from="(410,300)" to="(410,330)"/>
-    <wire from="(490,340)" to="(490,370)"/>
-    <comp lib="0" loc="(380,330)" name="Pin">
-      <a name="width" val="16"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Input"/>
-    </comp>
-    <comp lib="2" loc="(580,330)" name="Multiplexer">
-      <a name="selloc" val="tr"/>
-      <a name="width" val="32"/>
-      <a name="enable" val="false"/>
-    </comp>
-    <comp lib="0" loc="(630,330)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Output"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(480,300)" name="Bit Extender">
-      <a name="in_width" val="16"/>
-      <a name="out_width" val="32"/>
-      <a name="type" val="sign"/>
-    </comp>
-    <comp lib="0" loc="(560,280)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="ZeroExtend"/>
-    </comp>
-    <comp lib="0" loc="(480,370)" name="Bit Extender">
-      <a name="in_width" val="16"/>
-      <a name="out_width" val="32"/>
-    </comp>
-  </circuit>
   <circuit name="Hazard Unit">
     <a name="circuit" val="Hazard Unit"/>
     <a name="clabel" val="Hazard Unit"/>
