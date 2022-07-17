@@ -1,6 +1,6 @@
 # MIPS-CPU
 
-A Simulative 32-bit CPU Running on MIPS Instruction System Based on [Logisim](http://www.cburch.com/logisim/) (Newer version [Logisim Evolution](https://github.com/reds-heig/logisim-evolution) is not supported).
+A Simulative 32-bit CPU Running on MIPS Instruction System Based on [Logisim](http://www.cburch.com/logisim/) (Newer version [Logisim Evolution](https://github.com/reds-heig/logisim-evolution) is not supported). Basic understanding of digital design and MIPS pipelined CPU is strongly recommended ([1] is a great textbook for learning). For more details about implementations please refer to the [wiki page](https://github.com/yuxincs/MIPS-CPU/wiki).
 
 ![MIPS-CPU-GIF](https://github.com/yuxincs/MIPS-CPU/raw/main/demo.gif)
 
@@ -102,12 +102,6 @@ RAM for each level of interruption. This program has to be loaded into the secon
 which is the special address reserved for the service program. Upon exception, PC will be set to 
 `0x00000800` to run the service program. It is preloaded in the second ROM in all versions of 
 MIPS-CPU that support exception handling.
-
-## Details
-
-Basic understanding of digital design and MIPS pipelined CPU is strongly recommended ([1] is a 
-great textbook for learning). For details about implementations please refer to the 
-[wiki page](https://github.com/yuxincs/MIPS-CPU/wiki).
 
 ## References
 [1] Harris, David, and Sarah Harris. Digital design and computer architecture. Morgan Kaufmann, 2010.
