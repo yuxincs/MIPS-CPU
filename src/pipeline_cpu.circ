@@ -53,7 +53,7 @@
   </lib>
   <lib desc="#Plexers" name="2">
     <tool name="Multiplexer">
-      <a name="width" val="32"/>
+      <a name="select" val="3"/>
     </tool>
     <tool name="Demultiplexer">
       <a name="select" val="5"/>
@@ -78,7 +78,7 @@
   </lib>
   <lib desc="#Memory" name="4">
     <tool name="Register">
-      <a name="width" val="32"/>
+      <a name="width" val="16"/>
     </tool>
     <tool name="ROM">
       <a name="contents">addr/data: 8 8
@@ -729,7 +729,6 @@
       <a name="facing" val="south"/>
       <a name="label" val="IsCOP0"/>
     </comp>
-    <comp loc="(1670,590)" name="ALU_Wrapper"/>
     <comp lib="5" loc="(670,180)" name="Hex Digit Display">
       <a name="color" val="#7bff00"/>
       <a name="offcolor" val="#000000"/>
@@ -991,6 +990,7 @@
     <comp lib="0" loc="(250,1300)" name="Tunnel">
       <a name="label" val="Halt"/>
     </comp>
+    <comp lib="7" loc="(1670,590)" name="ALU"/>
     <comp lib="0" loc="(870,1320)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="ReadRs"/>
@@ -3329,71 +3329,6 @@ c 2011ffff 118c00 2020 24840064 2484ff9c 14800017 2020
       <a name="tristate" val="false"/>
       <a name="label" val="clk"/>
       <a name="labelloc" val="south"/>
-    </comp>
-  </circuit>
-  <circuit name="ALU_Wrapper">
-    <a name="circuit" val="ALU_Wrapper"/>
-    <a name="clabel" val=""/>
-    <a name="clabelup" val="east"/>
-    <a name="clabelfont" val="SansSerif plain 12"/>
-    <appear>
-      <polyline fill="none" points="142,251 142,212" stroke="#000000" stroke-width="2"/>
-      <polyline fill="none" points="142,171 142,131" stroke="#000000" stroke-width="2"/>
-      <polyline fill="none" points="143,131 202,163" stroke="#000000" stroke-width="2"/>
-      <polyline fill="none" points="202,164 202,222" stroke="#000000" stroke-width="2"/>
-      <polyline fill="none" points="153,183 153,201" stroke="#000000" stroke-width="2"/>
-      <polyline fill="none" points="153,182 143,172" stroke="#000000" stroke-width="2"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="159" y="155">=</text>
-      <polyline fill="none" points="143,251 202,223" stroke="#000000" stroke-width="2"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="148" y="156">X</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="209" y="184">R</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="147" y="236">Y</text>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="180" y="168">S</text>
-      <polyline fill="none" points="143,211 153,201" stroke="#000000" stroke-width="2"/>
-      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="176" y="196">ALU</text>
-      <circ-port height="8" pin="560,400" width="8" x="136" y="146"/>
-      <circ-port height="8" pin="560,480" width="8" x="136" y="226"/>
-      <circ-port height="8" pin="630,540" width="8" x="176" y="146"/>
-      <circ-port height="10" pin="680,500" width="10" x="155" y="135"/>
-      <circ-port height="10" pin="750,430" width="10" x="195" y="185"/>
-      <circ-anchor facing="east" height="6" width="6" x="167" y="187"/>
-    </appear>
-    <wire from="(560,400)" to="(610,400)"/>
-    <wire from="(560,480)" to="(610,480)"/>
-    <wire from="(650,500)" to="(680,500)"/>
-    <wire from="(670,430)" to="(750,430)"/>
-    <wire from="(630,490)" to="(630,540)"/>
-    <wire from="(650,480)" to="(650,500)"/>
-    <comp lib="0" loc="(630,540)" name="Pin">
-      <a name="facing" val="north"/>
-      <a name="width" val="4"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="AluOP"/>
-      <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="0" loc="(560,480)" name="Pin">
-      <a name="width" val="32"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Y"/>
-    </comp>
-    <comp lib="7" loc="(640,440)" name="ALU"/>
-    <comp lib="0" loc="(680,500)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Equal"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(750,430)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Result"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(560,400)" name="Pin">
-      <a name="width" val="32"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="X"/>
     </comp>
   </circuit>
   <circuit name="Hazard Unit">
